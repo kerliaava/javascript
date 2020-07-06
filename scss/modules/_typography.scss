@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coda:wght@800&display=swap');
+
+
+$main-font: 'poppins',
+sans-serif;
+
+$accent-font: 'Coda',
+cursive;
+
+h2 {
+    font-family: $main-font;
+    color: white;
+    font-size: 15px;
+    letter-spacing: 5px;
+    z-index: 999;
+}
+
+h3 {
+    font-family: $main-font;
+    color: white;
+    font-size: 25px;
+    letter-spacing: 5px;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+}
