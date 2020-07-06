@@ -7,7 +7,8 @@
     overflow: hidden;
 
     @include lg {
-        height: 125vh;
+        height: 120vh;
+        padding-bottom: 5em;
 
     }
 
@@ -29,6 +30,7 @@
             transform: scale(2);
             padding: 30px;
             letter-spacing: 14px;
+
         }
     }
 
@@ -47,6 +49,7 @@
 
         @include lg {
             padding: 30px;
+            margin-bottom: 5em;
         }
 
     }
@@ -66,6 +69,7 @@
 
         @include lg {
             padding: 30px;
+
         }
     }
 

@@ -160,7 +160,8 @@ body {
 
 @media (min-width: 992px) {
   .landing {
-    height: 125vh;
+    height: 120vh;
+    padding-bottom: 5em;
   }
 }
 
@@ -203,6 +204,7 @@ body {
 @media (min-width: 992px) {
   .landing .text:before {
     padding: 30px;
+    margin-bottom: 5em;
   }
 }
 
