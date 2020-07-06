@@ -16,9 +16,11 @@
         margin-bottom: 4em;
         overflow-x: hidden;
 
-        @include lg {
+        @include md {
             grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
         }
+
+
 
     }
 
