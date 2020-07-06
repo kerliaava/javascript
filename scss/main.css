@@ -5,7 +5,7 @@ h2 {
   color: white;
   font-size: 15px;
   letter-spacing: 5px;
-  z-index: 999;
+  z-index: 3;
 }
 
 h3 {
@@ -520,5 +520,27 @@ body {
   text-decoration: line-through;
   -webkit-transition: ease 0.5s;
   transition: ease 0.5s;
+}
+
+.loader {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 999;
+  -webkit-transition: all 1.2s ease-out 0.3s;
+  transition: all 1.2s ease-out 0.3s;
+}
+
+.loader__gif {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 /*# sourceMappingURL=main.css.map */

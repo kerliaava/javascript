@@ -17,20 +17,23 @@ $(document).ready(function () {
 
 });
 
-new CircleType(document.getElementById('curved-text-1'))
-    .radius(185);
+// page loader 
 
-new CircleType(document.getElementById('curved-text-2'))
-    .radius(185);
+let loader = document.getElementById("loader");
 
-new CircleType(document.getElementById('curved-text-3'))
-    .radius(185);
+window.addEventListener("load", function () {
 
-new CircleType(document.getElementById('curved-text-4'))
-    .radius(185);
+    loader.style.visibility = "hidden";
 
-new CircleType(document.getElementById('curved-text-5'))
-    .radius(185);
+});
 
-new CircleType(document.getElementById('curved-text-6'))
-    .radius(185);
+
+// to delay animations until the page loader has finished
+
+document.body.classList.add('js-loading');
+
+window.addEventListener("load", showPage);
+
+function showPage() {
+    document.body.classList.remove('js-loading');
+}
