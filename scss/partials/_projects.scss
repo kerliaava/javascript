@@ -16,7 +16,10 @@
             column-gap: 3em;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             margin-bottom: 0;
+        }
 
+        @include lg {
+            margin-bottom: 4em;
         }
     }
 
@@ -36,8 +39,10 @@
         @include md {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            margin-bottom: 0;
+        }
 
+        @include lg {
+            margin-bottom: 4em;
         }
     }
 

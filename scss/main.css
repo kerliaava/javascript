@@ -31,8 +31,8 @@ a {
 body {
   background-color: black;
   overflow-x: hidden;
-  -webkit-transition: background-color 1s ease;
-  transition: background-color 1s ease;
+  -webkit-transition: background-color 0.7s ease;
+  transition: background-color 0.7s ease;
   padding: 0 5vw;
 }
 
@@ -85,6 +85,12 @@ body {
   }
 }
 
+@media (min-width: 1025px) {
+  .main-container .project-reverse {
+    margin-bottom: 4em;
+  }
+}
+
 .main-container .project {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -111,7 +117,12 @@ body {
     display: grid;
     -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1025px) {
+  .main-container .project {
+    margin-bottom: 4em;
   }
 }
 
