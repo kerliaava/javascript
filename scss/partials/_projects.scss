@@ -1,27 +1,44 @@
 .main-container {
 
 
-    .reverse {
-        @include lg {}
+    .project-reverse {
+
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 4em;
+        overflow-x: hidden;
+
+
+        @include md {
+            display: grid;
+            column-gap: 3em;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            margin-bottom: 0;
+
+        }
     }
 
 
 
     .project {
 
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         margin-bottom: 4em;
         overflow-x: hidden;
+        column-gap: 3em;
+
 
         @include md {
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            margin-bottom: 0;
+
         }
-
-
-
     }
 
 
@@ -35,8 +52,13 @@
         font-weight: lighter;
 
 
+        @include md {
+            text-align: right;
+
+        }
+
         @include lg {
-            text-align: left;
+            text-align: right;
             margin-bottom: 15vh;
         }
 
@@ -46,8 +68,8 @@
     .text-left {
         text-align: center;
 
-        @include lg {
-            text-align: right;
+        @include md {
+            text-align: left;
         }
     }
 
