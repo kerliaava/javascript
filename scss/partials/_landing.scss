@@ -47,6 +47,7 @@
         left: 1.5px;
         text-shadow: -1px 0 #E93732;
         animation: glitch-1-xs 2s linear infinite reverse;
+        -webkit-animation: glitch-1-xs 2s linear infinite reverse;
         color: white;
         content: attr(data-text);
         position: absolute;
@@ -63,6 +64,7 @@
             margin-bottom: 5em;
             text-shadow: -2px 0 #E93732;
             animation: glitch-1 2s linear infinite reverse;
+            -webkit-animation: glitch-1 2s linear infinite reverse;
         }
 
         @include md {
@@ -71,6 +73,7 @@
             margin-bottom: 5em;
             text-shadow: -2px 0 #E93732;
             animation: glitch-1-md 2s linear infinite reverse;
+            -webkit-animation: glitch-1-md 2s linear infinite reverse;
         }
 
     }
@@ -79,6 +82,7 @@
         left: -1.5px;
         text-shadow: -1px 0 blue;
         animation: glitch-2-xs 2s linear infinite reverse;
+        -webkit-animation: glitch-2-xs 2s linear infinite reverse;
         color: white;
         content: attr(data-text);
         position: absolute;
@@ -94,6 +98,7 @@
             padding: 30px;
             text-shadow: -2px 0 blue;
             animation: glitch-2 2s linear infinite reverse;
+            -webkit-animation: glitch-2 2s linear infinite reverse;
 
 
         }
@@ -103,12 +108,12 @@
             padding: 30px;
             text-shadow: -2px 0 blue;
             animation: glitch-2-md 2s linear infinite reverse;
-
+            -webkit-animation: glitch-2-md 2s linear infinite reverse;
         }
     }
 
 
-    @keyframes glitch-1 {
+    @-webkit-keyframes glitch-1 {
 
         0% {
             clip: rect(132px, 550px, 101px, 30px);
@@ -116,7 +121,6 @@
 
         5% {
             clip: rect(17px, 550px, 94px, 30px);
-
         }
 
         10% {
@@ -189,7 +193,6 @@
 
         95% {
             clip: rect(68px, 550px, 103px, 30px);
-
         }
 
         100% {
@@ -200,7 +203,7 @@
 
 
 
-    @keyframes glitch-2 {
+    @-webkit-keyframes glitch-2 {
 
         0% {
             clip: rect(129px, 550px, 36px, 30px);
@@ -298,7 +301,7 @@
     }
 
 
-    @keyframes glitch-1-xs {
+    @-webkit-keyframes glitch-1-xs {
 
         0% {
             clip: rect(35.2px, 550px, 26.9px, 8.6px);
@@ -392,7 +395,7 @@
 
     }
 
-    @keyframes glitch-2-xs {
+    @-webkit-keyframes glitch-2-xs {
 
         0% {
             clip: rect(34.4px, 550px, 9.6px, 8.6px);
@@ -480,7 +483,7 @@
     }
 
 
-    @keyframes glitch-1-md {
+    @-webkit-keyframes glitch-1-md {
 
         0% {
             clip: rect(101.5px, 550px, 77.7px, 23.1px);
@@ -572,7 +575,7 @@
 
 
 
-    @keyframes glitch-2-md {
+    @-webkit-keyframes glitch-2-md {
 
         0% {
             clip: rect(99.2px, 550px, 27.7px, 23.1px);
