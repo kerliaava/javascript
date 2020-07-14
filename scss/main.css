@@ -791,8 +791,6 @@ main {
 .container {
   height: 100vh;
   width: 100%;
-  background-image: url(/images/640F5D5A-525F-4E67-A58D-3A8968063117_1_201_a.jpeg);
-  background-size: cover;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -807,6 +805,11 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.drums-container {
+  background-image: url(/images/640F5D5A-525F-4E67-A58D-3A8968063117_1_201_a.jpeg);
+  background-size: cover;
 }
 
 .keys {
@@ -873,5 +876,67 @@ main {
   border: 1px solid #E2C044;
   -webkit-box-shadow: 0 0 10px #E2C044;
           box-shadow: 0 0 10px #E2C044;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.clock-container {
+  background-image: url(/images/sasha.jpg);
+  background-size: contain;
+}
+
+.clock {
+  width: 55vmin;
+  height: 55vmin;
+  border-radius: 50%;
+  background-color: transparent;
+  border: solid 5px #f4e4da;
+  position: relative;
+  padding: 2rem;
+}
+
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+}
+
+.hand {
+  height: 2px;
+  width: 50%;
+  background-color: black;
+  position: absolute;
+  bottom: 50%;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-transform-origin: 100%;
+          transform-origin: 100%;
+  -webkit-transition: all 0.05s;
+  transition: all 0.05s;
+  -webkit-transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+          transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.hour-hand {
+  height: 3px;
 }
 /*# sourceMappingURL=main.css.map */

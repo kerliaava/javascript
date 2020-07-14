@@ -1,13 +1,16 @@
 .container {
     height: 100vh;
     width: 100%;
-    background-image: url(/images/640F5D5A-525F-4E67-A58D-3A8968063117_1_201_a.jpeg);
-    background-size: cover;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.drums-container {
+    background-image: url(/images/640F5D5A-525F-4E67-A58D-3A8968063117_1_201_a.jpeg);
+    background-size: cover;
 }
 
 .keys {
