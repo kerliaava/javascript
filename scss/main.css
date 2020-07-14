@@ -264,6 +264,7 @@ main {
 
 .landing .text:before {
   left: 1.5px;
+  clip: rect(132px, 550px, 101px, 30px);
   text-shadow: -1px 0 #E93732;
   animation: glitch-1-xs 2s linear infinite reverse;
   -webkit-animation: glitch-1-xs 2s linear infinite reverse;
@@ -302,6 +303,7 @@ main {
 
 .landing .text:after {
   left: -1.5px;
+  clip: rect(132px, 550px, 101px, 30px);
   text-shadow: -1px 0 blue;
   animation: glitch-2-xs 2s linear infinite reverse;
   -webkit-animation: glitch-2-xs 2s linear infinite reverse;
