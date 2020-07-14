@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Coda:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
 h2 {
   font-family: "poppins", sans-serif;
   color: white;
@@ -33,11 +34,14 @@ body {
   overflow-x: hidden;
   -webkit-transition: background-color 0.7s ease;
   transition: background-color 0.7s ease;
+}
+
+main {
   padding: 0 5vw;
 }
 
 @media (min-width: 1025px) {
-  body {
+  main {
     padding: 0 15vw;
   }
 }
@@ -782,5 +786,92 @@ body {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  background-image: url(/images/640F5D5A-525F-4E67-A58D-3A8968063117_1_201_a.jpeg);
+  background-size: cover;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.keys {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.key {
+  height: 7em;
+  width: 9em;
+  border-radius: 5px;
+  background-color: black;
+  opacity: 0.7;
+  display: inline-block;
+  margin: 1em;
+  color: white;
+  font-size: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+}
+
+.key h1 {
+  color: white;
+  font-size: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.key p {
+  font-size: 10px;
+  color: #E2C044;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 5px;
+  margin: 3px 0;
+  text-transform: uppercase;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.playing {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  border: 1px solid #E2C044;
+  -webkit-box-shadow: 0 0 10px #E2C044;
+          box-shadow: 0 0 10px #E2C044;
 }
 /*# sourceMappingURL=main.css.map */

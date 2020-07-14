@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" href="../scss/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="keys">
+            <div data-key="81" class="key">
+                <h1>q</h1>
+                <p>Press</p>
+            </div>
+            <div data-key="87" class="key">
+                <h1>w</h1>
+                <p>down</p>
+            </div>
+            <div data-key="69" class="key">
+                <h1>e</h1>
+                <p>the</p>
+            </div>
+            <div data-key="82" class="key">
+                <h1>r</h1>
+                <p>key</p>
+            </div>
+            <div data-key="84" class="key">
+                <h1>t</h1>
+                <p>indicated</p>
+            </div>
+            <div data-key="89" class="key">
+                <h1>y</h1>
+                <p>and</p>
+            </div>
+            <div data-key="85" class="key">
+                <h1>u</h1>
+                <p>enjoy</p>
+            </div>
+        </div>
+    </div>
+
+    <audio data-key="81" src="sounds/drum-1.wav"></audio>
+    <audio data-key="87" src="sounds/drum-2.wav"></audio>
+    <audio data-key="69" src="sounds/drum-3.wav"></audio>
+    <audio data-key="82" src="sounds/drum-4.wav"></audio>
+    <audio data-key="84" src="sounds/drum-5.wav"></audio>
+    <audio data-key="89" src="sounds/drum-6.wav"></audio>
+    <audio data-key="85" src="sounds/drum-7.wav"></audio>
+
+
+
+
+    <script>
+        window.addEventListener('keydown', function (e) {
+            const audio = document.querySelector(
+                `audio[data-key ="${e.keyCode}"]`); //[]- attribute selector es6 deplate strings $
+
+            const key = document.querySelector(
+                `.key[data-key ="${e.keyCode}"]`); //[]- attribute selector es6 deplate strings $
+
+            if (!audio) return; //stop the function
+            audio.currentTime = 0; // to rewinf it so when we click several times it starts from the beginning
+            audio.play();
+            key.classList.add('playing');
+
+        });
+
+        function removeTransition(e) {
+            if (e.propertyName !== 'transform') return;
+            this.classList.remove('playing');
+        }
+
+        const keys = document.querySelectorAll('.key');
+
+        keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+    </script>
+</body>
+
+</html>
