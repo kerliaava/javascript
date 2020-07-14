@@ -11,6 +11,7 @@
 .drums-container {
     background-image: url(/images/640F5D5A-525F-4E67-A58D-3A8968063117_1_201_a.jpeg);
     background-size: cover;
+    padding: 1em;
 }
 
 .keys {
@@ -20,13 +21,13 @@
 }
 
 .key {
-    height: 7em;
-    width: 9em;
+    height: 11vmin;
+    width: 9vmin;
     border-radius: 5px;
     background-color: black;
     opacity: 0.7;
     display: inline-block;
-    margin: 1em;
+    margin: 2vmin;
     color: white;
     font-size: 15px;
     display: flex;
@@ -34,11 +35,12 @@
     justify-content: center;
     flex-direction: column;
     transition: all 0.7s;
+    overflow: hidden;
 
 
     h1 {
         color: white;
-        font-size: 30px;
+        font-size: 2vmax;
         text-transform: uppercase;
         text-align: center;
         font-weight: bold;
@@ -47,7 +49,7 @@
     }
 
     p {
-        font-size: 10px;
+        font-size: 0.7vmax;
         color: #E2C044;
         font-weight: bold;
         text-align: center;
