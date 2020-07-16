@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C S S </title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" href="../scss/main.css">
+</head>
+
+<body>
+
+    <div class="container blur-container">
+
+        <h1 class="heading">Update CSS variables with JS</h1>
+
+        <div class="controls">
+
+            <div><label for="border">Border color:</label>
+                <input type="color" name="border" value="#BFBCC3"></div>
+
+
+            <div> <label for="spacing">Border width:</label>
+                <input type="range" name="spacing" min="0" max="25" value="10" data-sizing="px"></div>
+
+            <div> <label for="blur">Blur:</label>
+                <input type="range" name="blur" min="0" max="25" value="0" data-sizing="px">
+            </div>
+        </div>
+
+
+
+        <div class="photo-container">
+            <img src="../images/freyalee.jpeg" alt="">
+
+            <div class="blur-text">
+                <h2>Lovers under the bower</h2>
+                <h3>by Freya Lee</h3>
+                <p>Freya Lee is a Oxforshire based artist whose work is inspired by motherhood, myth, femininity and
+                    nostalgia.</p>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+        const inputs = document.querySelectorAll('.controls input');
+
+        function handleUpdate() {
+            const suffix = this.dataset.sizing ||
+                ''; //to add px, || '' means or nothing, without it it would return undefined
+            document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+        }
+
+        inputs.forEach(input => input.addEventListener('change', handleUpdate));
+        inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
+    </script>
+
+</body>
+
+</html>

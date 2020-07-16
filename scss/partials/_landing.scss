@@ -6,13 +6,12 @@
     align-items: center;
     overflow: hidden;
 
+
     @include lg {
         height: 120vh;
         padding-bottom: 5em;
 
     }
-
-
 
     .text {
         font-family: 'Poppins', sans-serif;
@@ -111,6 +110,15 @@
             text-shadow: -2px 0 blue;
             animation: glitch-2-md 2s linear infinite reverse;
             -webkit-animation: glitch-2-md 2s linear infinite reverse;
+        }
+    }
+
+    .subtitle {
+        text-align: center;
+        font-size: 10px;
+
+        @include md {
+            font-size: 13px
         }
     }
 
@@ -673,4 +681,14 @@
         }
 
     }
+}
+
+.project-description {
+    height: 50vh;
+    font-size: 13px;
+    font-family: $main-font;
+    color: white;
+    letter-spacing: 3px;
+    text-align: justify;
+    line-height: 2;
 }
