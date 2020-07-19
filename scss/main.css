@@ -754,6 +754,7 @@ main {
   letter-spacing: 3px;
   text-align: justify;
   line-height: 2;
+  margin-bottom: 10vh;
 }
 
 .footer {
@@ -810,6 +811,15 @@ main {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  width: 80%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .loader__gif {
+    width: 35%;
+    height: auto;
+  }
 }
 
 .container {
@@ -924,7 +934,7 @@ main {
 }
 
 .clock-container {
-  background-image: url(/images/sasha.jpg);
+  background-image: url(./images/sasha.jpg);
   background-size: contain;
 }
 
