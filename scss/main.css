@@ -221,6 +221,13 @@ main {
       -ms-flex-align: center;
           align-items: center;
   overflow: hidden;
+  padding-left: 1em;
+}
+
+@media (min-width: 768px) {
+  .landing {
+    padding-left: 0;
+  }
 }
 
 @media (min-width: 1025px) {

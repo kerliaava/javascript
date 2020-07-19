@@ -5,7 +5,11 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    padding-left: 1em;
 
+    @include md{
+        padding-left:0;
+    }
 
     @include lg {
         height: 120vh;
