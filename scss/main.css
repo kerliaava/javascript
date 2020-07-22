@@ -755,7 +755,6 @@ main {
 }
 
 .project-description {
-  height: 50vh;
   font-size: 13px;
   font-family: "poppins", sans-serif;
   color: white;
@@ -763,6 +762,12 @@ main {
   text-align: justify;
   line-height: 2;
   margin-bottom: 10vh;
+}
+
+@media (min-width: 768px) {
+  .project-description {
+    height: 50vh;
+  }
 }
 
 .footer {

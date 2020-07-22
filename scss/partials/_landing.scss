@@ -688,7 +688,7 @@
 }
 
 .project-description {
-    height: 50vh;
+   
     font-size: 13px;
     font-family: $main-font;
     color: white;
@@ -696,4 +696,8 @@
     text-align: justify;
     line-height: 2;
     margin-bottom: 10vh;
+
+    @include md{
+        height: 50vh;
+    }
 }
