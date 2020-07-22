@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H T M L 5 C A N V A S</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+        html {
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+        }
+
+        h1 {
+            z-index: 99;
+            color: rgb(171, 144, 133);
+            font-size: 9vmin;
+            letter-spacing: 10px;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        button {
+            width: 15em;
+            border: none;
+            padding: 1em;
+            color: #333;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            background-color: rgb(213, 196, 186);
+            letter-spacing: 5px;
+            border-radius: 10px;
+            margin: 1.5em;
+            outline: none;
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: auto;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="text">
+        <h1>GET CREATIVE</h1>
+        <button onclick="location.reload(); return false;">Start over</button>
+
+    </div>
+
+
+    <canvas id="draw" width="800" height="800"></canvas>
+
+    <script>
+        const canvas = document.querySelector('#draw');
+
+        //to draw on 
+        const ctx = canvas.getContext('2d');
+
+        //resizing the canvas to be the size of the browser window
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        //styling the stroke
+
+        ctx.stokeStyle = 'pink';
+        ctx.lineJoin = 'round';
+        ctx.lineCap = 'round';
+
+        //it draws only when mouse cliked down 
+
+        let isDrawing = false;
+        //to start and end the line
+        let lastX = 0;
+        let lastY = 0;
+        let hue = 0;
+
+        // function to draw
+
+        function draw(e) {
+            if (!isDrawing) return; // stops the function from running when the mouse is not clicked down
+            console.log(e);
+
+            //drawing 
+            ctx.strokeStyle = `hsla(${hue}, 20%, 66%, 0.99)`;
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.stroke();
+            ctx.lineWidth = 20;
+
+            //updateing lastX and lastY
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+            hue++
+
+        }
+
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mousedown', (e) => {
+            isDrawing = true;
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        });
+        canvas.addEventListener('mouseup', () => isDrawing = false);
+        canvas.addEventListener('mouseout', () => isDrawing = false);
+
+
+
+    </script>
+
+</body>
+
+</html>
