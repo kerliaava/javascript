@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" href="../scss/main.css">
+    <style>
+        body {
+            background-color: #417471 !important;
+
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="country-container">
+
+        <div class="country-text">
+            <h1>What is the Capital of..?</h1>
+        </div>
+
+        <div class="painting">
+            <img src="../images/13111F7F-8726-4D66-9CA0-B41AC08431C1_1_105_c.jpeg" alt="">
+        </div>
+
+
+        <form class="search-form">
+            <input type="text" class="search" placeholder="Name of the Country">
+            <ul class="suggestions">
+
+            </ul>
+        </form>
+
+    </div>
+
+    <script>
+        const endpoint = 'https://raw.githubusercontent.com/samayo/country-json/master/src/country-by-capital-city.json';
+
+        // we need an emepty array to put our citites into
+
+        const countries = [];
+
+        // fetch the data use fetch that returns a 'promise' which will evenetually return data 
+        //The Blob object represents a blob, which is a file-like object of immutable, raw data; they can be read as text or binary data, or converted into a ReadableStream so its methods can be used for processing the data.
+        fetch(endpoint)
+            .then(blob => blob.json())
+            .then(data => countries.push(...data)) //we use spread ... method to push citites into the empty array
+
+        //
+        function findMatches(wordToMatch, countries) {
+            return countries.filter(place => {
+
+                const regex = new RegExp(wordToMatch, 'gi'); //g -global i-insensitive
+                return place.country.match(regex)
+            });
+        }
+
+        //creating our display function 
+
+        function displayMatches() {
+            const matchArray = findMatches(this.value, countries);
+            const html = matchArray.map(place => {
+                const regex = new RegExp(this.value, 'gi');
+                const countryName = place.country.replace(regex, `<span class="hl">${this.value}</span>`);
+                return `
+                <li>
+                    <span class="name">${countryName}</span>
+                    <span class="city">${place.city}</span>
+                        </li>
+                `;
+            }).join(''); // from multiply items into one big string
+
+            suggestions.innerHTML = html;
+        }
+
+        const searchInput = document.querySelector('.search');
+        const suggestions = document.querySelector('.suggestions');
+
+        searchInput.addEventListener('change', displayMatches);
+        searchInput.addEventListener('keyup', displayMatches); // fires when we stop typing
+
+
+
+    </script>
+</body>
+
+</html>s

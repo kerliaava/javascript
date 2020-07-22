@@ -6,110 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>G A L L E R Y</title>
   <script src="https://kit.fontawesome.com/531679cb3e.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../scss/main.css">
   <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
 
   <style>
     html {
       box-sizing: border-box;
-      background: white;
+      background: white !important;
+
     }
 
     body {
-      margin: 3em;
+      margin: 3em !important;
     }
+
 
     *,
     *:before,
     *:after {
       box-sizing: inherit;
-    }
-
-    .panels {
-      min-height: 90vh;
-      overflow: hidden;
-      display: flex;
-    }
-
-    .panel {
-      color: #854c41;
-      background-size: cover;
-      background-position: center;
-      text-align: center;
-      align-items: center;
-      display: flex;
-      flex: 1;
-      /*all the items will be distributed evenly on the screen */
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      -webkit-transition: flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
-        background 0.2s;
-      transition: flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
-        background 0.2s;
-    }
-
-    .panel-1 {
-      background-image: url(../images/morisot-2.jpg);
-    }
-
-    .panel-2 {
-      background-image: url(../images/morisot-1.jpg);
-    }
-
-    .panel-3 {
-      background-image: url(../images/morisot-4.jpeg);
-    }
-
-    .panel-4 {
-      background-image: url(../images/morisot-5.jpeg);
-    }
-
-    /* flex-children */
-
-    .panel>* {
-      margin: 0;
-      width: 100%;
-      -webkit-transition: transform 0.5s;
-      transition: transform 0.5s;
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    /* when the panel is active we give it a class open, the text and image go bigger */
-    .panel.open {
-      flex: 5;
-    }
-
-    .white-background {
-      background: rgba(255, 255, 255, 0.5);
-      letter-spacing: 5px;
-      font-size: 1rem;
-    }
-
-    /* to hide and show the top and bottom text o the panels */
-
-    .panel>*:first-child {
-      -webkit-transform: translateY(-100%);
-      -ms-transform: translateY(-100%);
-      transform: translateY(-100%);
-    }
-
-
-
-    .panel>*:last-child {
-
-      -webkit-transform: translateY(100%);
-      -ms-transform: translateY(100%);
-      transform: translateY(100%);
-    }
-
-    .panel.open-active> :first-child,
-    .panel.open-active> :last-child {
-      -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
-      transform: translateY(0);
     }
 
     @media only screen and (max-width: 600px) {
@@ -126,11 +41,13 @@
       }
     }
   </style>
+
 </head>
 
 <body>
-  <div class="panels">
-    <div class="panel panel-1">
+
+  <div class="gallery-panels">
+    <div class="gallery-panel gallery-panel-1">
       <h1></h1>
       <i class="fa fa-expand" aria-hidden="true"></i>
       <div class="white-background">
@@ -142,7 +59,7 @@
       </div>
     </div>
 
-    <div class="panel panel-2">
+    <div class="gallery-panel gallery-panel-2">
       <h1></h1>
       <i class="fa fa-expand" aria-hidden="true"></i>
       <div class="white-background">
@@ -153,7 +70,9 @@
         </p>
       </div>
     </div>
-    <div class="panel panel-3">
+
+
+    <div class="gallery-panel gallery-panel-3">
       <h1></h1>
       <i class="fa fa-expand" aria-hidden="true"></i>
       <div class="white-background">
@@ -164,7 +83,10 @@
         </p>
       </div>
     </div>
-    <div class="panel panel-4">
+
+
+
+    <div class="gallery-panel gallery-panel-4">
       <h1></h1>
       <i class="fa fa-expand" aria-hidden="true"></i>
       <div class="white-background">
@@ -178,7 +100,7 @@
   </div>
 
   <script>
-    const panels = document.querySelectorAll('.panel');
+    const panels = document.querySelectorAll('.gallery-panel');
 
     function toggleOpen() {
       console.log('Hello');
@@ -194,6 +116,7 @@
 
     panels.forEach(panel => panel.addEventListener('click', toggleOpen));
     panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
+
   </script>
 </body>
 
