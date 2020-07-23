@@ -60,84 +60,71 @@
     </div>
 
 
-    <canvas id="sig-canvas" width="800" height="800"></canvas>
+    <canvas id="draw" width="800" height="800"></canvas>
 
     <script>
+        const canvas = document.querySelector('#draw');
 
-        var canvas = document.getElementById("sig-canvas");
-        var ctx = canvas.getContext("2d");
-        ctx.strokeStyle = "#222222";
-        ctx.lineWith = 2;
+        //to draw on 
+        const ctx = canvas.getContext('2d');
 
-        var drawing = false;
-        var mousePos = { x: 0, y: 0 };
-        var lastPos = mousePos;
-        canvas.addEventListener("mousedown", function (e) {
-            drawing = true;
-            lastPos = getMousePos(canvas, e);
-        }, false);
-        canvas.addEventListener("mouseup", function (e) {
-            drawing = false;
-        }, false);
-        canvas.addEventListener("mousemove", function (e) {
-            mousePos = getMousePos(canvas, e);
-        }, false);
+        //resizing the canvas to be the size of the browser window
 
-        // Get the position of the mouse relative to the canvas
-        function getMousePos(canvasDom, mouseEvent) {
-            var rect = canvasDom.getBoundingClientRect();
-            return {
-                x: mouseEvent.clientX - rect.left,
-                y: mouseEvent.clientY - rect.top
-            };
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        //styling the stroke
+
+        ctx.stokeStyle = 'pink';
+        ctx.lineJoin = 'round';
+        ctx.lineCap = 'round';
+
+        //it draws only when mouse cliked down 
+
+        let isDrawing = false;
+        //to start and end the line
+        let lastX = 0;
+        let lastY = 0;
+        let hue = 0;
+
+        // function to draw
+
+        function draw(e) {
+            if (!isDrawing) return; // stops the function from running when the mouse is not clicked down
+            console.log(e);
+
+            //drawing 
+            ctx.strokeStyle = `hsla(${hue}, 20%, 66%, 0.99)`;
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.stroke();
+            ctx.lineWidth = 20;
+
+            //updateing lastX and lastY
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+            hue++
+
         }
 
-        // Get a regular interval for drawing to the screen
-        window.requestAnimFrame = (function (callback) {
-            return window.requestAnimationFrame ||
-                window.webkitRequestAnimationFrame ||
-                window.mozRequestAnimationFrame ||
-                window.oRequestAnimationFrame ||
-                window.msRequestAnimaitonFrame ||
-                function (callback) {
-                    window.setTimeout(callback, 1000 / 60);
-                };
-        })();
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mousedown', (e) => {
+            isDrawing = true;
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        });
+        canvas.addEventListener('mouseup', () => isDrawing = false);
+        canvas.addEventListener('mouseout', () => isDrawing = false);
 
-        // Draw to the canvas
-        function renderCanvas() {
-            if (drawing) {
-                ctx.moveTo(lastPos.x, lastPos.y);
-                ctx.lineTo(mousePos.x, mousePos.y);
-                ctx.stroke();
-                lastPos = mousePos;
-            }
-        }
+        // mobile
+        canvas.addEventListener("touchmove", draw);
 
-        // Allow for animation
-        (function drawLoop() {
-            requestAnimFrame(drawLoop);
-            renderCanvas();
-        })();
+        canvas.addEventListener("touchstart", (e) => {
+            isDrawing = true;
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        });
 
-        // Prevent scrolling when touching the canvas
-        document.body.addEventListener("touchstart", function (e) {
-            if (e.target == canvas) {
-                e.preventDefault();
-            }
-        }, false);
-        document.body.addEventListener("touchend", function (e) {
-            if (e.target == canvas) {
-                e.preventDefault();
-            }
-        }, false);
-        document.body.addEventListener("touchmove", function (e) {
-            if (e.target == canvas) {
-                e.preventDefault();
-            }
-        }, false);
+        canvas.addEventListener("touchend", () => isDrawing = false);
 
-        (passiveSupported && (active || el == window.document || el == window.document.body || el == window)) ? el.addEventListener(name, fn, { passive: false, capture: bubble }) : el.addEventListener(name, fn, bubble || false);
 
     </script>
 
