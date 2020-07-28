@@ -766,6 +766,7 @@ main {
 @media (min-width: 768px) {
   .project-description {
     height: 50vh;
+    margin-bottom: 10vh;
   }
 }
 
