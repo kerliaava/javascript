@@ -65,13 +65,13 @@
       text-align: center;
       align-items: center;
       display: flex;
+      transition: flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11), background 0.2s;
       flex: 1;
       /*all the items will be distributed evenly on the screen */
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      transition: 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11)
-        background 0.2s;
+    
     }
 
     .gallery-panel-1 {
@@ -111,15 +111,19 @@
     }
 
     /* when the panel is active we give it a class open, the text and image go bigger */
-    .gallery-panel.open {
+    .open {
       flex: 5;
+      transition: ease-in-out 0.8s;
      
     }
+ 
 
     .white-background {
       background: rgba(255, 255, 255, 0.5);
       letter-spacing: 5px;
       font-size: 1rem;
+      transition: ease-in-out 0.5s;
+      // transition-delay: 0.5s;
     }
 
     /* to hide and show the top and bottom text o the panels */
@@ -128,7 +132,6 @@
   
       transform: translateY(-100%);
     }
-
 
 
     .gallery-panel>*:last-child {

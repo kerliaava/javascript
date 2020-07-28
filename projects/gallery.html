@@ -10,8 +10,6 @@
   <link rel="stylesheet" href="../scss/main.css">
 
 
-
-
   <style>
     html {
       box-sizing: border-box;
@@ -105,7 +103,8 @@
 
   <script>
 
-    //preloader 
+
+
     let galleryLoader = document.getElementById("gallery-loader");
 
     window.addEventListener("load", function () {
@@ -114,7 +113,7 @@
 
     });
 
-    //app
+
     const panels = document.querySelectorAll('.gallery-panel');
 
     function toggleOpen() {
@@ -124,13 +123,13 @@
 
     function toggleActive(e) {
       console.log(e.propertyName);
-      if (e.propertyName.includes('flex')) {
-        this.classList.toggle('open-active');
-      }
+      this.classList.toggle('open-active');
+
     }
 
     panels.forEach(panel => panel.addEventListener('click', toggleOpen));
-    panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
+
+    panels.forEach(panel => panel.addEventListener('click', toggleActive));
 
   </script>
 </body>
