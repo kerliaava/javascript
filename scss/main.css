@@ -1562,6 +1562,7 @@ input.search::placeholder {
 .suggestions {
   margin: 0;
   padding: 0;
+  max-height: 10vh;
   /*perspective: 20px;*/
 }
 
