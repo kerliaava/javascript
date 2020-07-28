@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="../scss/main.css">
 
 
+
+
   <style>
     html {
       box-sizing: border-box;
@@ -38,6 +40,15 @@
 </head>
 
 <body>
+
+  <div id="gallery-loader">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
 
   <div class="gallery-panels">
     <div class="gallery-panel gallery-panel-1">
@@ -93,6 +104,17 @@
   </div>
 
   <script>
+
+    //preloader 
+    let galleryLoader = document.getElementById("gallery-loader");
+
+    window.addEventListener("load", function () {
+
+      galleryLoader.style.visibility = "hidden";
+
+    });
+
+    //app
     const panels = document.querySelectorAll('.gallery-panel');
 
     function toggleOpen() {

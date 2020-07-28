@@ -94,6 +94,7 @@
         align-self: center;
         overflow-x: hidden;
         overflow-y: hidden;
+        outline: none;
 
         @include md {
             margin-top: 10em;
