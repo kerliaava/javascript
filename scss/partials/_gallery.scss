@@ -18,7 +18,7 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      transition: flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+      transition: 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11)
         background 0.2s;
     }
 
@@ -32,10 +32,18 @@
 
     .gallery-panel-3 {
       background-image: url(../images/morisot-4.jpeg);
+
+      @include xs{
+        display: none;
+      }
     }
 
     .gallery-panel-4 {
       background-image: url(../images/morisot-5.jpeg);
+
+      @include xs{
+        display: none;
+      }
     }
 
     /* flex-children */
@@ -53,6 +61,7 @@
     /* when the panel is active we give it a class open, the text and image go bigger */
     .gallery-panel.open {
       flex: 5;
+     
     }
 
     .white-background {
@@ -75,8 +84,13 @@
       transform: translateY(100%);
     }
 
-    .gallery-panel.open-active> :first-child,
-    .gallery-panel.open-active> :last-child {
+    .gallery-panel.open-active>:first-child
+    {
+ 
+      transform: translateY(0);
+    }
+
+    .gallery-panel.open-active>:last-child {
  
       transform: translateY(0);
     }

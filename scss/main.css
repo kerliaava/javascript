@@ -1240,10 +1240,8 @@ img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-transition: background 0.2s, -webkit-box-flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11);
-  transition: background 0.2s, -webkit-box-flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11);
-  transition: flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), background 0.2s;
-  transition: flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), background 0.2s, -webkit-box-flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), -ms-flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11);
+  -webkit-transition: 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11) background 0.2s;
+  transition: 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11) background 0.2s;
 }
 
 .gallery-panel-1 {
@@ -1258,8 +1256,20 @@ img {
   background-image: url(../images/morisot-4.jpeg);
 }
 
+@media (max-width: 575px) {
+  .gallery-panel-3 {
+    display: none;
+  }
+}
+
 .gallery-panel-4 {
   background-image: url(../images/morisot-5.jpeg);
+}
+
+@media (max-width: 575px) {
+  .gallery-panel-4 {
+    display: none;
+  }
 }
 
 /* flex-children */
@@ -1308,7 +1318,11 @@ img {
           transform: translateY(100%);
 }
 
-.gallery-panel.open-active > :first-child,
+.gallery-panel.open-active > :first-child {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
 .gallery-panel.open-active > :last-child {
   -webkit-transform: translateY(0);
           transform: translateY(0);
