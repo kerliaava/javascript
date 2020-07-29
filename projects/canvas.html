@@ -49,6 +49,40 @@
             width: 100vw;
             height: auto;
         }
+
+        .text-mobile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            width: 100vw;
+            height: 90vh;
+
+        }
+
+        .text-mobile p,
+        a {
+            letter-spacing: 5px;
+            color: rgb(168, 84, 52);
+            margin: 2em;
+            font-family: 'Montserrat', sans-serif;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+
+        .text-mobile img {
+            width: 70%;
+            height: auto;
+        }
+
+        @media only screen and (min-width: 416px) {
+            .text-mobile {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -58,6 +92,12 @@
         <h1>GET CREATIVE</h1>
         <button onclick="location.reload(); return false;">Start over</button>
 
+    </div>
+
+    <div class="text-mobile">
+        <img src="https://media.giphy.com/media/nR4L10XlJcSeQ/giphy.gif" alt="">
+        <p>Oh no, currently only working on desktop</p>
+        <a href="../index.html">return to my Portfolio</a>
     </div>
 
 
