@@ -34,8 +34,8 @@ a {
 body {
   background-color: black;
   overflow-x: hidden;
-  -webkit-transition: background-color 0.7s ease;
-  transition: background-color 0.7s ease;
+  -webkit-transition: background-color 0.1s ease;
+  transition: background-color 0.1s ease;
 }
 
 main {
