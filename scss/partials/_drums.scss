@@ -10,7 +10,9 @@
 
 .drums-container {
     background-image: url(../images/The_Drummer_Boy_William_Morris_Hunt.jpeg);
-    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: cover;;
+    background-position: center;
     padding: 1em;
 }
 
@@ -21,21 +23,22 @@
 }
 
 .key {
-    height: 11vmin;
-    width: 9vmin;
+    height: 13vmin;
+    width: 10vmin;
     border-radius: 5px;
     background-color: black;
     opacity: 0.7;
     display: inline-block;
     margin: 2vmin;
     color: white;
-    font-size: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     transition: all 0.7s;
     overflow: hidden;
+
+ 
 
 
     h1 {
@@ -53,10 +56,15 @@
         color: #8A5F27;
         font-weight: bold;
         text-align: center;
-        letter-spacing: 5px;
+         letter-spacing: 1px;
         margin: 3px 0;
         text-transform: uppercase;
         font-family: 'Work Sans', sans-serif;
+        
+
+        @include md {
+            letter-spacing: 5px;
+        }
     }
 }
 

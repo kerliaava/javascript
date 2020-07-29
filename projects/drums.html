@@ -57,23 +57,6 @@
 
     <script>
 
-        let playSoundButton = document.getElementsByClassName('key');
-
-
-        var playSound = function () {
-            var attribute = this.getAttribute("data-sound");
-            var sounds = document.getElementsByTagName('audio');
-            for (i = 0; i < sounds.length; i++) {
-                sounds[i].pause();
-                sounds[i].currentTime = 0;
-            }
-            document.getElementById(attribute).play();
-        };
-
-        for (var i = 0; i < playSoundButton.length; i++) {
-            playSoundButton[i].addEventListener('click', playSound, false);
-        }
-
 
         window.addEventListener('keydown', function (e) {
             const audio = document.querySelector(
@@ -94,6 +77,22 @@
         function removeTransition(e) {
             if (e.propertyName !== 'transform') return;
             this.classList.remove('playing');
+        }
+
+        let playSoundButton = document.getElementsByClassName('key');
+
+        var playSound = function () {
+            var attribute = this.getAttribute("data-sound");
+            var sounds = document.getElementsByTagName('audio');
+            for (i = 0; i < sounds.length; i++) {
+                sounds[i].pause();
+                sounds[i].currentTime = 0;
+            }
+            document.getElementById(attribute).play();
+        };
+
+        for (var i = 0; i < playSoundButton.length; i++) {
+            playSoundButton[i].addEventListener('click', playSound, false);
         }
 
 
