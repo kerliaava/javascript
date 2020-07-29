@@ -57,7 +57,8 @@
 
     <script>
 
-
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        const audioCtx = new AudioContext();
         window.addEventListener('keydown', function (e) {
             const audio = document.querySelector(
                 `audio[data-key ="${e.keyCode}"]`); //[]- attribute selector es6 deplate strings $
