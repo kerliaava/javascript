@@ -60,6 +60,11 @@ main {
   background-color: black;
 }
 
+a:visited {
+  text-decoration: none;
+  outline: none;
+}
+
 /*#6DA092, #3E646B, #B9B4B0  2E0014*/
 .main-container .project-reverse {
   display: -webkit-box;
@@ -1390,9 +1395,16 @@ img {
 .white-background {
   background: rgba(255, 255, 255, 0.5);
   letter-spacing: 5px;
-  font-size: 1rem;
+  font-size: 13px;
+  font-family: 'Times New Roman', Times, serif;
   -webkit-transition: ease-in-out 0.5s;
   transition: ease-in-out 0.5s;
+}
+
+@media (min-width: 768px) {
+  .white-background {
+    font-size: 1rem;
+  }
 }
 
 /* to hide and show the top and bottom text o the panels */

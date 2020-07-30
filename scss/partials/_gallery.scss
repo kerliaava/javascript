@@ -121,9 +121,14 @@
     .white-background {
       background: rgba(255, 255, 255, 0.5);
       letter-spacing: 5px;
-      font-size: 1rem;
+      font-size: 13px;
+      font-family: 'Times New Roman', Times, serif;
       transition: ease-in-out 0.5s;
       // transition-delay: 0.5s;
+
+      @include md {
+        font-size: 1rem;
+      }
     }
 
     /* to hide and show the top and bottom text o the panels */
