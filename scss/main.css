@@ -18,6 +18,7 @@ h3 {
   letter-spacing: 5px;
   margin-bottom: 1em;
   text-transform: uppercase;
+  line-height: 1.2;
 }
 
 a {
@@ -158,6 +159,11 @@ a:visited {
     text-align: right;
     margin-bottom: 15vh;
   }
+}
+
+.main-container .project-text .link-indicator {
+  margin-top: 1em;
+  text-decoration: underline;
 }
 
 .main-container .text-left {
