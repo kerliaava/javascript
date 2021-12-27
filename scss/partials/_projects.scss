@@ -14,7 +14,7 @@
         @include md {
             display: grid;
             column-gap: 3em;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: 1fr 1fr;
             margin-bottom: 0;
         }
 
@@ -38,7 +38,7 @@
 
         @include md {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: 1fr 1fr;
 
         }
 
